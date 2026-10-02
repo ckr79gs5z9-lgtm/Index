@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Crimson Pact</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Pact">
+<meta name="theme-color" content="#050505">
+<link rel="apple-touch-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAIAAACyr5FlAAAEuElEQVR4nO3dUW7bMBBFUaaoP7OBrCfLznqygW6gHwQMI8ljJEvivBne89sCpsirUeq4ycvtdmvAT/5ELwC+iAMScUAiDkjEAYk4IBEHJOKARByQiAMScUAiDkjEAYk4IBEHJOKARByQiAMScUAiDkjEAYk4IBEHJOKARByQiAMScUAiDkjEAYk4IBEHJOKARByQiAMScUAiDkjEAYk4IBEHpL/RCwjz8fq2/S+///u8biW2Xtb5IbW7ahhbpJX6cZzYxHe1Kykbx6VNfFeykoJxTM7iUbFESsURmMWjMokUicMki0cFEkkfh2EWj1InkjuOg2VsPLk5r2IoaxzPHdgp5xT40pOljGPv8Vx0MCbLuE6+ONze9nZbz4kyxbH9GELOwHx5T0gTx8atD9/3LOvcIse37BPt+Jx/Ac2RYHJs2UeHLL5IuuxH7pMj7xZvWZX5/LCOI28ZXfY+En8SzDmLu75I5wIGfCfHeENTlHE3Xq1tOqZxVCqjy9iHYxz1yujS9eEYx0DeMrpc67eLw/AGmsbt2r3iqPpAeZTo4eIVx0CNMros12IUx+CmybKb2w2uyGd4GMUBNy5xLDU2Ov/h4RKHUrWMzvzqLOIwuVGsOOyJRRyK+Y11CudrjI/D4RbxFL4z8XHAlm8czvP2XLZXGhxH+OQ0F7s/ppPD9ma6iOf1msYBB5GfIfV5pvy4EpO7+eP1LWoljpNj5l58vL6pRgd/dAWTFh8l/vT5QRsPvv81w5ObwHFyTLB3JPg8AWdaMY7nTnrBPsLiiNrrI6+bcc1H2E2ONZ/undu128VxqeO34FIPl7XiwC4LxXHWTb/O8FgoDuxFHJCIAxJxQCIOSMQBaaE4znr/0e19zOssFAf2WiuO4zf9OmOjGcaxzvuP37lde1gcUbfgkdfNuOYj7CbHBM/t9VIPlG7FONr+k16wjLbyB4w3/uDpNbPoHCfH5P8QoI5/8EdXcPtqtMVOjvd/nyY74jweAtfmODlgwjQOk4kyjef1BsfhPM8dxO6P6eRorjfTFWyv1DcOhIuPgyeLEr4z8XEM2M7bEzlfo0Uc4beIIYc9sYhjwPnGOs786lzi8P8p8afz/10ALnHAkFEcSw0P/7HRrOIYq9RHlmvxiiPRL8d7WqJfcugVRzPbncncrt0ujrHswyPX+h3jqPpwSfRA6RzjaBX7SFdGs42j1eojYxkt9afPU/zg6VwRf+E7Odq2g3fe/S1rc47bOo6WuY/sZbTWXm63W/Qafrfx+E32OtdqB9wnR7dxHx1GSJkyWpbJ0W0/+5CtN1/eEzLF0e0aDxOOwW09J8oXR9v/+LjoSEyWcZ2UcbRnv7w45XgCX3qyrHF0B78CnfN1bsYsutxxNI9/oQzkLaMViKMzTCR1Fl2RODqTRApk0ZWKowtMpEwWXcE4usmJFMuiKxvH3aWVlGzirn4cdydWUruJu4Xi+KLw295nWTcO/CrHt+wRgjggEQck4oBEHJCIAxJxQCIOSMQBiTggEQck4oBEHJCIAxJxQCIOSMQBiTggEQck4oBEHJCIAxJxQCIOSMQBiTggEQck4oBEHJCIAxJxQCIOSMQBiTggEQck4oBEHJCIA9J/0GmFR6Wl4DkAAAAASUVORK5CYII=">
+<style>
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+--bg:#050505;--ink:#f3eee6;--dim:#8a847a;--red:#c1121f;--gold:#cdbb9a;--line:#2a251f}
+*,*::before,*::after{box-sizing:inherit}
+html{height:100%;scroll-padding-top:env(safe-area-inset-top,0px);background:var(--bg)}
+body{height:100%;margin:0;overflow:hidden;background:var(--bg);color:var(--ink);
+font-family:Georgia,"Times New Roman",serif;-webkit-user-select:none;user-select:none;
+-webkit-touch-callout:none;overscroll-behavior:none;touch-action:manipulation;-webkit-tap-highlight-color:transparent}
+.screen{display:none;height:100%;flex-direction:column;align-items:center;justify-content:center;gap:14px;padding:20px;text-align:center;position:relative}
+.screen.on{display:flex;animation:fade .35s ease}
+@keyframes fade{from{opacity:0}to{opacity:1}}
+h1{font-weight:400;letter-spacing:.32em;font-size:clamp(24px,7vw,32px);margin:0 0 4px;text-shadow:0 0 16px rgba(255,255,255,.4);text-transform:uppercase}
+.sub{color:var(--dim);letter-spacing:.2em;font-size:12px;text-transform:uppercase;margin-bottom:14px}
+.btn{width:100%;max-width:420px;padding:19px 12px;border:1px solid var(--line);border-radius:14px;
+background:linear-gradient(#15130f,#0a0908);color:var(--ink);font:inherit;font-size:16px;letter-spacing:.3em;text-transform:uppercase}
+.btn:active{background:#201c17}
+.btn.exp{border-color:var(--gold);color:var(--gold);margin-top:8px}
+.skip{width:100%;max-width:420px;padding:19px;border:0;border-radius:14px;background:var(--red);color:#fff;font:inherit;font-weight:700;font-size:17px;letter-spacing:.35em}
+.skip:active{filter:brightness(.8)}
+.back{position:absolute;top:12px;left:14px;background:none;border:0;color:var(--dim);font:inherit;letter-spacing:.2em;font-size:13px;text-transform:uppercase;padding:10px}
+.card{width:100%;max-width:420px;flex:1;min-height:0;border:1px solid var(--line);border-radius:22px;margin-top:44px;padding:26px 16px 20px;
+background:radial-gradient(120% 80% at 70% 0%,#1b1814 0%,#070606 60%);display:flex;flex-direction:column;align-items:center;justify-content:space-between;animation:fade .3s ease}
+.who{letter-spacing:.55em;font-size:14px;color:#cfc8bc;margin-right:-.55em}
+.title{font-size:clamp(26px,8.2vw,38px);letter-spacing:.14em;text-transform:uppercase;text-shadow:0 0 14px rgba(255,255,255,.55);margin:8px 0 4px;line-height:1.15}
+.lines{flex:1;display:flex;flex-direction:column;justify-content:center}
+.lines p{margin:.65em 0;font-size:clamp(17px,4.8vw,21px);line-height:1.3}
+.note{font-style:italic;color:var(--dim);font-size:12px;line-height:1.35;margin:8px 4px 10px}
+.tier{letter-spacing:.42em;font-size:19px;margin-right:-.42em;text-transform:uppercase}
+.deck{letter-spacing:.35em;font-size:12px;color:var(--dim);margin-top:4px;text-transform:uppercase}
+.msg{min-height:20px;color:#d98;font-size:13px;max-width:320px}
+input{width:100%;max-width:260px;padding:14px;text-align:center;font:inherit;font-size:22px;letter-spacing:.4em;color:var(--ink);background:#0d0c0a;border:1px solid var(--line);border-radius:12px;-webkit-user-select:text;user-select:text}
+#cardscreen{padding-top:12px;gap:16px}
+</style>
+</head>
+<body>
+
+<div class="screen on" id="lock">
+  <h1>The Crimson Pact</h1>
+  <div class="sub">Adults only · 18+</div>
+  <input id="pin" type="password" inputmode="numeric" pattern="[0-9]*" maxlength="6" placeholder="••••••" autocomplete="off">
+  <button class="btn" id="pinBtn">Unlock</button>
+  <div class="msg" id="lockMsg"></div>
+</div>
+
+<div class="screen" id="home">
+  <h1>Choose</h1>
+  <div class="sub">Five tiers · One night</div>
+  <button class="btn" data-deck="THE PACT">The Pact</button>
+  <button class="btn" data-deck="TEMPTATION">Temptation</button>
+  <button class="btn" data-deck="LUST">Lust</button>
+  <button class="btn" data-deck="DELIRIUM">Delirium</button>
+  <button class="btn" data-deck="SURRENDER">Surrender</button>
+  <button class="btn exp" id="expBtn">Expansion</button>
+</div>
+
+<div class="screen" id="expansion">
+  <button class="back" data-go="home">‹ Back</button>
+  <h1>Expansion</h1>
+  <div class="sub">Go further</div>
+  <button class="btn" data-deck="FORBIDDEN">Forbidden</button>
+  <button class="btn" data-deck="DISCIPLINED">Disciplined</button>
+  <button class="btn" data-deck="GODDESS">Goddess</button>
+  <button class="btn" data-deck="GOD">God</button>
+</div>
+
+<div class="screen" id="cardscreen">
+  <button class="back" id="menuBtn">‹ Menu</button>
+  <div class="card" id="card"></div>
+  <button class="skip" id="skipBtn">SKIP</button>
+</div>
+
+<script>
+const DATA = {"THE PACT": {"note": "", "cards": [{"w": "SHARED", "t": "THE SAFE WORD", "l": ["Pick it now. Say it out loud.", "Test it once.", "Skipping a card costs nothing.", "Everything else tonight is negotiable."]}, {"w": "HER", "t": "MANNERS", "l": ["Every request starts with \"please.\"", "Forget, and he ignores you.", "Ask again. Properly this time."]}, {"w": "HIM", "t": "SILENT TREATMENT", "l": ["You don't speak unless spoken to.", "Moans are allowed. Words aren't.", "Break the rule and she picks your punishment."]}, {"w": "SHARED", "t": "BLINDFOLD", "l": ["Whoever draws this wears it until Delirium.", "The other decides what they feel next.", "No warning. No hints."]}, {"w": "HER", "t": "HEELS", "l": ["Heels stay on all night. In bed too.", "Let him look at your legs.", "Every position, every tier."]}, {"w": "SHARED", "t": "THE LEDGER", "l": ["Every orgasm gets a tally mark on a thigh.", "Use lipstick or a marker.", "The total is read aloud at Surrender."]}, {"w": "HIM", "t": "NO HANDS", "l": ["Hands behind your back, or tied to the bedpost.", "Mouth, hips, and obedience only.", "She decides when you get them back."]}, {"w": "SHARED", "t": "COMMENTARY", "l": ["Narrate everything you do, out loud, in filthy detail.", "Go quiet for ten seconds and you owe a forfeit.", "Your partner chooses it."]}, {"w": "HER", "t": "OPEN DOOR", "l": ["Thighs stay apart. All night.", "Sitting, kneeling, lying down.", "If you close them, he pries them open."]}, {"w": "SHARED", "t": "SWITCHBACK", "l": ["Set a timer for two minutes.", "When it rings, swap roles. Whoever was giving, receives.", "Don't stop to talk about it."]}, {"w": "HIM", "t": "MAY I?", "l": ["Ask before every touch.", "\"May I?\" is the only acceptable question.", "She says yes. Or makes you wait."]}, {"w": "SHARED", "t": "THE LOCK", "l": ["Nobody finishes before Surrender.", "Cum early, and your partner picks every card until the end.", "Hold on."]}, {"w": "HER", "t": "THE ORDER", "l": ["Each time you draw, give him one command.", "He obeys without question.", "(Safe word always applies.)"]}, {"w": "SHARED", "t": "MIRROR", "l": ["Every act happens where you can both watch.", "No looking away.", "See what you look like when you're doing it."]}, {"w": "SHARED", "t": "DOUBLE TIME", "l": ["Every act lasts twice as long as it needs to.", "Edge. Hold. Stay there.", "Anyone who asks to speed up loses a piece of clothing, or gets teased more."]}]}, "TEMPTATION": {"note": "", "cards": [{"w": "HIM", "t": "UNWRAP", "l": ["Undress her one piece at a time.", "Kiss every inch you uncover.", "Nothing is rushed."]}, {"w": "HER", "t": "LAP TAX", "l": ["Straddle him fully clothed.", "Grind slowly. Slowly.", "Stop before he's ready."]}, {"w": "SHARED", "t": "FILTHY WHISPERS", "l": ["Whisper the dirtiest thing you plan to do to your partner tonight.", "Then let them whisper theirs.", "Don't touch."]}, {"w": "HER", "t": "INSPECTION", "l": ["Strip him. Walk a slow circle around him.", "Touch nothing.", "Describe, out loud, what you'd do to each part."]}, {"w": "HIM", "t": "THE LONG WAY UP", "l": ["Kiss from her ankle to her inner thigh.", "Stop one inch short.", "Repeat on the other leg. She says \"please\" or he stays put."]}, {"w": "HER", "t": "THROUGH THE FABRIC", "l": ["Palm his cock through his underwear. Slow strokes only.", "His hands stay at his sides.", "Stop the moment he twitches."]}, {"w": "SHARED", "t": "LOOK ONLY", "l": ["Undress and stand across the room.", "Touch yourselves slowly, eyes locked.", "Nobody finishes."]}, {"w": "HIM", "t": "MOUTH DUTY", "l": ["Worship her nipples with your mouth for three minutes.", "Suck. Lick. A light bite.", "Your hands stay behind your back."]}, {"w": "HER", "t": "TEETH", "l": ["Kneel. Kiss his cock through the cotton.", "Pull his underwear down with your teeth.", "No hands."]}, {"w": "SHARED", "t": "DRY", "l": ["Strip to underwear. Rub against each other until you're both soaked and hard.", "Underwear stays on.", "Ten minutes."]}, {"w": "HIM", "t": "TWO FINGERS", "l": ["Finger her over her panties. Then under. Then inside.", "Slow. She tells you exactly how.", "Stop when she's close."]}, {"w": "HER", "t": "TONGUE ONLY", "l": ["Lick him from base to tip, ten times.", "Slow. Wet. Eyes up.", "No hands. No mouth around him."]}, {"w": "SHARED", "t": "GLASS", "l": ["Stand in front of a mirror. He's behind her, hands everywhere.", "Watch what he does to her.", "Say what you see."]}, {"w": "HIM", "t": "THE DISPLAY", "l": ["She lies back, knees apart.", "Look. Describe what you see, out loud.", "Taste before you touch."]}, {"w": "SHARED", "t": "BEG", "l": ["Each of you asks for the one thing you want most right now.", "Say it plainly. Say \"please.\"", "Your partner answers: yes, or not yet."]}]}, "LUST": {"note": "", "cards": [{"w": "HIM", "t": "FEAST", "l": ["Eat her slowly, tongue flat, no rush.", "Learn what makes her tremble.", "She doesn't finish. Not yet."]}, {"w": "HER", "t": "SLOW BURN", "l": ["Take him in your mouth, one hand at the base.", "Eye contact. Wet and sloppy.", "Three minutes."]}, {"w": "SHARED", "t": "SIXTY-NINE", "l": ["Five minutes. Both mouths busy.", "First one to moan loudly switches to the bottom.", "Keep going."]}, {"w": "HER", "t": "SADDLE", "l": ["Reverse cowgirl, slow.", "He holds your hips. You narrate every inch.", "Let him watch your ass."]}, {"w": "HIM", "t": "FROM BEHIND", "l": ["Take her slowly. A hand in her hair.", "Whisper what you're doing and what's coming next.", "Don't speed up until she asks."]}, {"w": "HER", "t": "NO HANDS", "l": ["Ride him with your hands behind your head.", "He can only look.", "Control everything with your hips."]}, {"w": "HER", "t": "THIGH", "l": ["Grind on his thigh until you leave a wet mark.", "He can't touch you.", "Keep eye contact."]}, {"w": "HIM", "t": "PINNED", "l": ["Missionary. Pin her wrists above her head.", "Slow, deep strokes.", "Tell her exactly what she is to you."]}, {"w": "SHARED", "t": "SPOON", "l": ["Side by side. He's inside her from behind.", "His hand works her clit. Hers grips his hair.", "No rushing. No stopping."]}, {"w": "HER", "t": "BETWEEN", "l": ["Oil your tits. Wrap them around his cock.", "Slide until he's slick and aching.", "Watch his face."]}, {"w": "HIM", "t": "CURL", "l": ["Two fingers inside, curled forward.", "Tongue on her clit. Steady pressure.", "Make her come once. Then stop."]}, {"w": "SHARED", "t": "THE WALL", "l": ["Standing against the wall. He lifts her.", "Kiss. Fuck. Hold.", "Don't put her down until she asks."]}, {"w": "HER", "t": "CLOCKED", "l": ["Ride him for five minutes.", "Every minute, change the pace: slow, grind, bounce, deep, fast.", "He doesn't move without permission."]}, {"w": "HIM", "t": "FLAT", "l": ["She lies on her stomach, legs closed, face in the pillow.", "Fuck her from above, deep and tight.", "Make her feel every inch."]}, {"w": "SHARED", "t": "NO PAUSE", "l": ["Pick any position.", "Fuck for ten minutes without stopping.", "Dirty talk the whole time."]}]}, "DELIRIUM": {"note": "", "cards": [{"w": "HER", "t": "THREE STRIKES", "l": ["Bring him to the edge with your hand. Stop.", "Again with your mouth. Stop.", "Once more with your pussy. Stop.", "He thanks you for each one."]}, {"w": "HIM", "t": "TWO FIRST", "l": ["She comes twice before you're allowed inside her.", "Mouth. Fingers. Whatever works.", "Not once less."]}, {"w": "SHARED", "t": "THE BUZZ", "l": ["Vibrator on her clit while he fucks her.", "She holds it and controls the setting.", "He can't slow down."]}, {"w": "HER", "t": "THE WAND", "l": ["Hold a wand vibrator to your own clit.", "He fucks you hard while you shake.", "He doesn't stop, even when you ask him to slow down."]}, {"w": "HIM", "t": "OVERLOAD", "l": ["Tongue on her clit until she comes.", "Keep going through the sensitivity. Sixty seconds more.", "Then fuck her, still trembling."]}, {"w": "SHARED", "t": "BOUND", "l": ["Tie her wrists to the headboard.", "Mouth, hands, toy: any order, ten minutes.", "She's not allowed to move her hands."]}, {"w": "HER", "t": "RESTRAINED", "l": ["Tie his wrists. Straddle him.", "Use him for your pleasure.", "He doesn't move. He doesn't come."]}, {"w": "HIM", "t": "THROAT", "l": ["She kneels. You hold her head.", "She sets the pace with her hands on your thighs.", "At the first sign of trouble, ease back."]}, {"w": "SHARED", "t": "IN THE DARK", "l": ["She's blindfolded. He moves around her.", "Mouth. Hands. Cock. Toy.", "She never knows what's next."]}, {"w": "HER", "t": "INSTRUCTIONS", "l": ["Tell him exactly what to do, in the filthiest language you can.", "He obeys every word.", "Reward him: \"good boy,\" or nothing."]}, {"w": "HIM", "t": "PIN AND PLEASE", "l": ["Pin her wrists to the wall.", "Fuck her standing.", "She finishes before she touches the floor."]}, {"w": "SHARED", "t": "FLOOD", "l": ["Towel down.", "Work her until she squirts, if she can.", "If not, push her until she's shaking."]}, {"w": "HER", "t": "RUIN", "l": ["Edge him five times.", "Between each, tell him he can't come.", "After the fifth, make him fuck you hard."]}, {"w": "HIM", "t": "THREE POSITIONS", "l": ["Fuck her in three positions.", "You change only after she comes.", "She chooses the order."]}, {"w": "SHARED", "t": "ABANDON", "l": ["Cards down. Ten minutes.", "Do anything you've both ever agreed to.", "No rules. No pause."]}]}, "SURRENDER": {"note": "", "cards": [{"w": "HIM", "t": "CHEST", "l": ["Finish across her tits.", "She rubs it into her skin.", "Eyes on him while she does."]}, {"w": "HER", "t": "SWALLOW", "l": ["He finishes in your mouth.", "Hold it. Show him.", "Swallow, or don't. Your call."]}, {"w": "SHARED", "t": "FULL", "l": ["Come inside her.", "Don't move. Hold each other.", "She keeps it in for five full minutes."]}, {"w": "HIM", "t": "BACK", "l": ["Finish across her back and ass.", "Trace your name in it with a fingertip.", "Slowly."]}, {"w": "HER", "t": "HANDS", "l": ["Stroke him over your tits.", "Eyes locked.", "Don't stop when he asks you to."]}, {"w": "SHARED", "t": "TOGETHER", "l": ["Side by side, hands on each other.", "Finish together.", "No instructions. Just eye contact."]}, {"w": "HIM", "t": "THREE", "l": ["She's come three times.", "Ask her permission.", "She says \"now.\""]}, {"w": "HER", "t": "BEG", "l": ["He begs to come.", "Make him say exactly how much he needs it.", "You decide when."]}, {"w": "SHARED", "t": "BENT", "l": ["She's bent over the bed.", "He fucks her, deep and hard.", "She counts him down from ten. He finishes on her ass."]}, {"w": "HIM", "t": "SIGNATURE", "l": ["Finish on her stomach.", "Sign your initials in it.", "She decides if it stays."]}, {"w": "HER", "t": "COUNTDOWN", "l": ["Stroke him slowly.", "Count down from ten.", "He comes on zero. Not before."]}, {"w": "SHARED", "t": "SIXTY-NINE END", "l": ["69. No stopping.", "Finish in each other's mouths.", "Swallow, or spit. Your call."]}, {"w": "HIM", "t": "DEEPEST", "l": ["Fuck her slow and deep.", "Come as deep as you can.", "Stay there. Don't pull out."]}, {"w": "HER", "t": "CLEAN", "l": ["After he finishes, clean him with your tongue.", "He can't stop you.", "Slowly. Thoroughly."]}, {"w": "SHARED", "t": "AFTERCARE", "l": ["Shower together. Water. Something sweet.", "Ten minutes of holding each other.", "Tell your partner the one thing you loved most tonight."]}]}, "FORBIDDEN": {"note": "Safety first: lots of lube. Go slow. Never force. Use toys with a flared base. Never go from anal to vaginal without washing or changing protection.", "cards": [{"w": "SHARED", "t": "THE CONVERSATION", "l": ["Talk it through. Boundaries. Curiosities.", "Agree on lube, protection, and a safe word.", "No pressure. This is the entry fee."]}, {"w": "HER", "t": "OIL AND OPEN", "l": ["He massages her ass with warm oil.", "He spreads her cheeks and just looks.", "No touching her hole. Yet."]}, {"w": "HIM", "t": "FINGERTIP", "l": ["Lube her. Circle slowly.", "No entry. Just pressure.", "She signals when she's ready for more."]}, {"w": "HER", "t": "SOFT ENTRY", "l": ["One lubed finger, to the first knuckle.", "Wait. Breathe.", "She decides if it goes deeper."]}, {"w": "HIM", "t": "TONGUE", "l": ["Spread her. Rim her.", "Slow. Wet. Don't stop.", "She tells you what she wants."]}, {"w": "HER", "t": "REVERSE", "l": ["Rim him. Slowly.", "He lies back, legs up, and tells you what feels good.", "No judgment."]}, {"w": "SHARED", "t": "PLUG IN", "l": ["Small plug, lots of lube.", "Wear it through Lust.", "The wearer sets the pace."]}, {"w": "HIM", "t": "FINGER AND FEAST", "l": ["Eat her pussy while one finger works her ass.", "Slow. Rhythm.", "She directs you."]}, {"w": "HER", "t": "PROSTATE", "l": ["Lubed finger, come-hither motion.", "Find the spot. Hold it.", "He narrates what he's feeling."]}, {"w": "SHARED", "t": "STRETCH", "l": ["Increase the size, a little at a time.", "Breathe. Rest. Lube.", "Only go as far as the receiver wants."]}, {"w": "HIM", "t": "THE TIP", "l": ["Lube her. Press the tip against her.", "She pushes back at her own pace.", "Don't move. Let her take you."]}, {"w": "HER", "t": "FULL", "l": ["Slow anal.", "Her hand on her clit.", "He doesn't speed up until she says so."]}, {"w": "SHARED", "t": "TWO SPEEDS", "l": ["Vibrating plug in her ass.", "He fucks her pussy, slowly then fast.", "She controls the buzz."]}, {"w": "HIM", "t": "STRAPPED", "l": ["She straps on. Lube. Patience.", "She fucks him, slowly, while he kneels.", "Safe word. Always."]}, {"w": "SHARED", "t": "THE LAST DOOR", "l": ["Anal sex, harder and deeper than you've tried.", "The receiver controls the pace.", "Aftercare is mandatory."]}]}, "DISCIPLINED": {"note": "Safety first: fleshy areas only (buttocks, outer thighs). Never spine, kidneys, joints, neck, or face. Start light, build slowly, check in. No alcohol. Canes are advanced: practice on a pillow first.", "cards": [{"w": "SHARED", "t": "WARM-UP", "l": ["Hands only. Ten spanks each cheek.", "Kiss each spot afterward.", "Check in. Breathe."]}, {"w": "HER", "t": "COUNT", "l": ["He spanks her. She counts each one aloud.", "Miss a number and it starts over.", "Start soft."]}, {"w": "HIM", "t": "SPANK AND SOOTHE", "l": ["Spank, then rub. Spank, then kiss.", "Alternate for five minutes.", "Each round a little harder."]}, {"w": "SHARED", "t": "OVER THE KNEE", "l": ["Put her over your knee.", "Fifteen spanks, building in force.", "She says \"thank you\" after each."]}, {"w": "HIM", "t": "STING", "l": ["Silicone or leather paddle.", "Ten swats. Check in every three.", "Leave a warm glow, not a bruise."]}, {"w": "HER", "t": "TURNABOUT", "l": ["Her turn with the paddle.", "She decides how hard.", "He takes it. He counts."]}, {"w": "SHARED", "t": "INNER THIGH", "l": ["Light spanks to the inner thighs.", "Slow. Teasing. Close, but never quite.", "Let the anticipation do the work."]}, {"w": "HIM", "t": "CROP", "l": ["Riding crop. Light taps from calf to ass.", "Then a firm swat or two.", "She tells you how it feels."]}, {"w": "HER", "t": "FLOGGER", "l": ["Soft flogger across his ass and thighs.", "Slow rhythm. Build.", "He thanks you for each pass."]}, {"w": "SHARED", "t": "BOUND AND BLUSHING", "l": ["Wrists tied. Spanks arrive without warning.", "The receiver can't see them coming.", "Check in often."]}, {"w": "HIM", "t": "STRAP", "l": ["Leather strap, ten firm strokes across her ass.", "She counts them out.", "No rushing. Each one lands."]}, {"w": "HER", "t": "THE SWISH", "l": ["Thin cane, five strokes.", "Start very light.", "He has to ask for more."]}, {"w": "SHARED", "t": "THE LEDGER (IMPACT)", "l": ["Every rule broken tonight earns a swat.", "Count them up.", "Collect the full debt now."]}, {"w": "HIM", "t": "GLOW", "l": ["Spank her until her skin is pink and warm.", "Then fuck her while it still stings.", "Every thrust, a reminder."]}, {"w": "SHARED", "t": "HEAVY", "l": ["Thirty strokes. Any mix of implements.", "The receiver names the final number.", "Full aftercare. No exceptions."]}]}, "GODDESS": {"note": "Everything is negotiated beforehand. Safe word always applies.", "cards": [{"w": "HIM", "t": "WORSHIP", "l": ["Kneel before her.", "Tell her three things you worship about her.", "Mean every word."]}, {"w": "HER", "t": "FOOTWORK", "l": ["Sit back. He massages your feet.", "He kisses each toe.", "He asks nothing in return."]}, {"w": "HIM", "t": "WARDROBE", "l": ["She picks what he wears, or doesn't wear.", "He undresses her afterward, slowly.", "Fold each piece."]}, {"w": "HER", "t": "REVIEW", "l": ["He stands naked.", "You inspect him slowly. Hands behind his back.", "He doesn't move. He doesn't speak."]}, {"w": "HIM", "t": "TONGUE DUTY", "l": ["Eat her until she tells you to stop.", "She decides when.", "You don't get to finish."]}, {"w": "HER", "t": "THE BAN", "l": ["His hands are not allowed on his cock.", "You decide if, when, and how.", "Every touch is a gift."]}, {"w": "HIM", "t": "PERMISSION", "l": ["Ask before every touch.", "She says yes. Or no. Or \"not yet.\"", "Accept all three."]}, {"w": "HER", "t": "LONG LICK", "l": ["Lie back. He serves.", "No hands. Tongue only.", "Two orgasms before he's released."]}, {"w": "HER", "t": "SLAP", "l": ["Ask first. Open palm only, across his cheek. Never a closed fist.", "Light, then firmer.", "He thanks you."]}, {"w": "HIM", "t": "DENIED", "l": ["She brings you to the edge.", "She stops. She says no.", "Accept it. Beg if you want."]}, {"w": "HER", "t": "THE RIDE", "l": ["Use him for your pleasure.", "He can't move. He can't come.", "Take what you want."]}, {"w": "HIM", "t": "COMMAND", "l": ["She directs you through three positions.", "You follow without question.", "Perform well."]}, {"w": "HER", "t": "MARK", "l": ["Bite his shoulder. Rake your nails down his back.", "Leave your signature on him.", "He'll feel it tomorrow."]}, {"w": "HIM", "t": "THE ASK", "l": ["Beg for what you want, in your own words.", "Be filthy. Be specific.", "She decides if you've earned it."]}, {"w": "HER", "t": "OWNED", "l": ["He is yours until morning.", "Every wish is a command.", "Safe word is his only voice. Aftercare when it's over."]}]}, "GOD": {"note": "Everything is negotiated beforehand. Safe word always applies.", "cards": [{"w": "HER", "t": "KNEEL", "l": ["Kneel at his feet.", "Tell him three things you worship about him.", "Don't look up until he lets you."]}, {"w": "HIM", "t": "DRESS CODE", "l": ["You choose what she wears, or doesn't.", "She undresses you slowly afterward.", "She folds every piece."]}, {"w": "HER", "t": "FOOTWORK", "l": ["Massage his feet. Kiss them.", "Ask for nothing.", "Take your time."]}, {"w": "HIM", "t": "INSPECTION", "l": ["She stands naked, hands behind her back.", "Walk around her. Touch what you like.", "She stays still and silent."]}, {"w": "HER", "t": "SERVICE", "l": ["Ask \"Where, sir?\" Then do exactly what he says.", "Hands, mouth, anything he names.", "Accept every answer."]}, {"w": "HIM", "t": "PERMISSION", "l": ["She can't touch you, or herself, without asking.", "Say yes. Say no. Say \"not yet.\"", "She thanks you for all three."]}, {"w": "HER", "t": "MOUTH DUTY", "l": ["Kneel. Take him in your mouth until he says stop.", "He sets the pace and depth.", "A tap on his thigh means ease back."]}, {"w": "HIM", "t": "THE LEAD", "l": ["Loop a scarf or soft collar around her neck. Loosely.", "Lead her to the bed by it.", "She crawls."]}, {"w": "HIM", "t": "THE GRIP", "l": ["Fist her hair. Pull her head back.", "Whisper what you're going to do to her.", "Then do it, slow and deep."]}, {"w": "HER", "t": "DENIED", "l": ["He brings you to the edge with his fingers.", "He stops. He says no.", "Thank him. Then ask again."]}, {"w": "HIM", "t": "USE", "l": ["Ten minutes. Take her however you like.", "She stays still and open.", "Take what you want."]}, {"w": "HIM", "t": "SLAP", "l": ["Ask first. Open palm only. Never a closed fist.", "Across her ass or cheek: light, then firmer.", "She thanks you."]}, {"w": "HER", "t": "BEG", "l": ["Beg for what you want, in your own words.", "Be filthy. Be specific.", "He decides if you've earned it."]}, {"w": "HIM", "t": "RULING", "l": ["Command her through three positions.", "She obeys without question.", "She doesn't finish until you say."]}, {"w": "HER", "t": "OWNED", "l": ["She is his until morning.", "Every wish is a command.", "Safe word is her only voice. Aftercare when it's over."]}]}};
+const $ = id => document.getElementById(id);
+
+function show(id) { document.querySelectorAll('.screen').forEach(s => s.classList.toggle('on', s.id === id)); }
+
+/* ---------- keep screen awake ---------- */
+let wl = null;
+async function keepAwake() {
+  try {
+    if ('wakeLock' in navigator && !wl) {
+      wl = await navigator.wakeLock.request('screen');
+      wl.addEventListener('release', () => { wl = null; });
+    }
+  } catch (e) {}
+}
+document.addEventListener('touchstart', keepAwake, { passive: true });
+
+/* ---------- lock / unlock ---------- */
+const CODE = '899601';
+let cameFrom = 'home';
+function lock() { $('pin').value = ''; $('lockMsg').textContent = ''; show('lock'); }
+function unlock() { $('pin').value = ''; show('home'); keepAwake(); }
+function tryCode() {
+  keepAwake();
+  const v = $('pin').value.trim();
+  if (v === CODE) { unlock(); }
+  else if (v.length >= CODE.length) { $('lockMsg').textContent = 'Wrong passcode.'; $('pin').value = ''; }
+}
+$('pin').addEventListener('input', () => { if ($('pin').value.length >= CODE.length) tryCode(); });
+$('pinBtn').addEventListener('click', () => {
+  if ($('pin').value.trim() !== CODE) { $('lockMsg').textContent = 'Wrong passcode.'; $('pin').value = ''; }
+  else unlock();
+});
+document.addEventListener('visibilitychange', () => {
+  if (document.hidden) { lock(); } else { keepAwake(); }
+});
+window.addEventListener('pagehide', lock);
+
+/* ---------- navigation ---------- */
+$('expBtn').addEventListener('click', () => show('expansion'));
+document.querySelectorAll('[data-go]').forEach(b => b.addEventListener('click', () => show(b.dataset.go)));
+$('menuBtn').addEventListener('click', () => show(cameFrom));
+
+/* ---------- drawing cards (shuffled, no repeats until deck is used up) ---------- */
+const bags = {}, last = {};
+function nextIndex(key) {
+  const n = DATA[key].cards.length;
+  if (!bags[key] || !bags[key].length) {
+    const a = Array.from({ length: n }, (_, i) => i);
+    for (let i = n - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; }
+    if (n > 1 && a[a.length - 1] === last[key]) a.unshift(a.pop());
+    bags[key] = a;
+  }
+  last[key] = bags[key].pop();
+  return last[key];
+}
+let current = null;
+function esc(s) { return s.replace(/[&<>]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;' }[c])); }
+function draw(key) {
+  current = key;
+  const d = DATA[key], c = d.cards[nextIndex(key)];
+  const card = $('card');
+  card.style.animation = 'none'; void card.offsetWidth; card.style.animation = '';
+  card.innerHTML =
+    '<div><div class="who">' + esc(c.w) + '</div><div class="title">' + esc(c.t) + '</div></div>' +
+    '<div class="lines">' + c.l.map(x => '<p>' + esc(x) + '</p>').join('') + '</div>' +
+    (d.note ? '<div class="note">' + esc(d.note) + '</div>' : '') +
+    '<div><div class="tier">' + esc(key) + '</div></div>';
+  show('cardscreen');
+}
+document.querySelectorAll('[data-deck]').forEach(b => b.addEventListener('click', () => {
+  cameFrom = b.closest('.screen').id;
+  draw(b.dataset.deck);
+}));
+$('skipBtn').addEventListener('click', () => draw(current));
+
+/* ---------- keep it app-like ---------- */
+document.addEventListener('contextmenu', e => e.preventDefault());
+['gesturestart', 'gesturechange'].forEach(ev => document.addEventListener(ev, e => e.preventDefault()));
+document.addEventListener('touchmove', e => { if (!e.target.closest('input')) e.preventDefault(); }, { passive: false });
+</script>
+</body>
+</html>
